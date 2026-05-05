@@ -1,0 +1,14 @@
+com\sistema\models\Horario.class
+com\sistema\models\Disciplina.class
+com\sistema\App.class
+com\sistema\models\Turma.class
+com\sistema\repositories\ProfessorRepository.class
+com\sistema\controllers\HorarioController.class
+com\sistema\controllers\ProfessorController.class
+com\sistema\controllers\TurmaController.class
+com\sistema\repositories\TurmaRepository.class
+com\sistema\controllers\HomeController.class
+com\sistema\repositories\DisciplinaRepository.class
+com\sistema\controllers\DisciplinaController.class
+com\sistema\models\Professor.class
+com\sistema\repositories\HorarioRepository.class
