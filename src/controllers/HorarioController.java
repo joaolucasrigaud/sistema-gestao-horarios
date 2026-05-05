@@ -77,14 +77,20 @@ public class HorarioController {
     }
 
     @GetMapping("/horarios/por-professor")
-    public String porProfessor(@RequestParam("id") Long id, Model model) {
-        model.addAttribute("horarios", horarioRepository.findByProfessorId(id));
-        return "horarios/list";
+    public String porProfessor(@RequestParam(value = "id", required = false) Long id, Model model) {
+        model.addAttribute("professores", professorRepository.findAll());
+        if (id != null) {
+            model.addAttribute("horarios", horarioRepository.findByProfessorId(id));
+        }
+        return "horarios/por-professor";
     }
 
     @GetMapping("/horarios/por-turma")
-    public String porTurma(@RequestParam("id") Long id, Model model) {
-        model.addAttribute("horarios", horarioRepository.findByTurmaId(id));
-        return "horarios/list";
+    public String porTurma(@RequestParam(value = "id", required = false) Long id, Model model) {
+        model.addAttribute("turmas", turmaRepository.findAll());
+        if (id != null) {
+            model.addAttribute("horarios", horarioRepository.findByTurmaId(id));
+        }
+        return "horarios/por-turma";
     }
 }
