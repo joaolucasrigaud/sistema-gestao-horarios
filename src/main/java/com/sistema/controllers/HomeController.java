@@ -1,13 +1,19 @@
 package com.sistema.controllers;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.Map;
+
+@RestController
 public class HomeController {
 
     @GetMapping("/")
-    public String index() {
-        return "index";
+    public Map<String, String> index() {
+        return Map.of(
+                "name", "Sistema de Gestão de Horários",
+                "mode", "API",
+                "swagger", "/swagger-ui.html"
+        );
     }
 }
